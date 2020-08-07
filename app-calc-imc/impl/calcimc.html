@@ -6,6 +6,8 @@
     <title>Calculadora IMC</title>
 
     <script>
+        //Guardando dados da tela dentro de objetos
+
         function calcular(){
             //1 - ler os dados da tela
             let altura = document.getElementById("campoAltura").value
@@ -13,11 +15,12 @@
 
             //Objeto que gaurda os dados da pessoa
             let pessoa = {altura: altura, peso: peso}
-            
+
             console.log(pessoa)
             //2 - cálcular o IMC
             let imc = pessoa.peso / (pessoa.altura * pessoa.altura)
-
+            
+            console.log(imc)
             //3 - classificar o resultado
             let mensagem = ""
 
