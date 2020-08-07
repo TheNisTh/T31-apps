@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <script>
+            class Calculadora{
+            somar(){
+                //Leitura
+                //var n1 = document.querySelectorAll("input")[0].value
+                //var n2 = document.querySelectorAll("input")[1].value
+                //Calcula
+                var n1 = num1.value
+                var n2 = num2.value
+                var soma = parseFloat(n1) + parseFloat(n2)
+                //Saída
+                alert(soma)
+            }
+            subtrair(){
+                var n1 = num1.value
+                var n2 = num2.value
+                var sub = n1 - n2
+                alert(sub)
+            }
+            multiplicar(){
+                var n1 = num1.value
+                var n2 = num2.value
+                var mult = n1 * n2
+                alert(mult)
+            }
+            dividir(){
+                var n1 = num1.value
+                var n2 = num2.value
+                if(n2 != 0){
+                    var div = n1 / n2
+                    alert(div)
+                }else{
+                    alert("Digite um número diferente de zero!")
+                }
+            }
+        }
+        var calc = new Calculadora()
+        </script>
+    </head>
+    <body>
+        <h1>Calculadora Top</h1>
+        <input id="num1" type="number" placeholder="Número 1"/>
+        <input id="num2" type="number" placeholder="Número 2"/>
+        <button onclick="calc.somar()">Somar</button>
+        <button onclick="calc.subtrair()">Subtrair</button>
+        <button onclick="calc.multiplicar()">Multiplicar</button>
+        <button onclick="calc.dividir()">Dividir</button> 
+    </body>
+</html>
