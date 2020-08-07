@@ -10,10 +10,17 @@
             //1 - ler os dados da tela
             let altura = document.getElementById("campoAltura").value
             let peso = document.getElementById("campoPeso").value
+
+            //Objeto que gaurda os dados da pessoa
+            let pessoa = {altura: altura, peso: peso}
+            
+            console.log(pessoa)
             //2 - cálcular o IMC
-            let imc = peso / (altura * altura)
+            let imc = pessoa.peso / (pessoa.altura * pessoa.altura)
+
             //3 - classificar o resultado
             let mensagem = ""
+
             if(imc < 18.5){
                 mensagem="Abaixo do peso"
             }else if(imc>=18.5 && imc<=24.9){
