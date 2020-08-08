@@ -14,11 +14,19 @@
             let peso = document.getElementById("campoPeso").value
 
             //Objeto que gaurda os dados da pessoa
-            let pessoa = {altura: altura, peso: peso}
-
-            console.log(pessoa)
+            //e pode ter funções
+            let pessoa = {
+                altura:altura, 
+                peso:peso,
+                imc: function(){
+                    return this.peso / (this.altura * this.altura)
+                }
+            }
+            console.log(pessoa.altura)
+            console.log(pessoa.peso)
+            console.log(pessoa.imc())
             //2 - cálcular o IMC
-            let imc = pessoa.peso / (pessoa.altura * pessoa.altura)
+            let imc = pessoa.imc()
             
             console.log(imc)
             //3 - classificar o resultado
