@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo</title>
+</head>
+<script>
+        function calcular(){
+            let num1 = document.getElementById("campo1").value
+            let num2 = document.getElementById("campo2").value
+            let num3 = document.getElementById("campo3").value
+            let mensagem = ""
+
+            if((parseFloat(num1)+parseFloat(num2)<num3)||parseFloat(num2)+parseFloat(num3)<num1||parseFloat(num1)+parseFloat(num3)<num2){
+                mensagem = "Não é um triângulo"
+            }else if(num1==num2 && num2==num3){
+                mensagem = "Triângulo Equilátero"
+            }else if(num1==num2 && num2!=num3){
+                mensagem = "Triângulo Isosceles"
+            }else if(num1!=num2 && num2!=num3 && num3!=num1){
+                mensagem = "Triângulo Escaleno"
+            }
+            document.getElementById("resultado").innerText = mensagem
+        }
+</script>
+<body>
+    <style>
+        form>div{
+            position: relative;
+        }
+        form>div>label{
+            position: absolute;
+        }
+    </style>
+    <center>
+        <div>
+        <h3>Verificar se é um triângulo</h3>
+        
+        <div>    
+        
+        <input id="campo1" type ="number" placeholder="Lado 1"></input>
+        
+        <input id="campo2" type ="number" placeholder="Lado 2"></input>
+        
+        <input id="campo3" type ="number" placeholder="Lado 3"></input>
+        </div>
+        <br/>
+        
+        <div><button onclick="calcular()">Descobrir Triângulo</button></div>
+        <br/>
+        <div id="resultado" style="font-weight: bold;" ;""></div>
+        </div>
+    </center>
+</body>
+</html>
