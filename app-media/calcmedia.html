@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de média</title>
+</head>
+<script>
+    function calcular(){
+        let num1 = document.getElementById("campo1").value
+        let num2 = document.getElementById("campo2").value
+
+        let media = (parseFloat(num1) + parseFloat(num2)) / 2
+        alert(media)
+    }
+</script>
+<body>
+    <div>
+        <center>
+        <div><h3>Calculadora de Média</h3></div>
+        <br/>
+        <div>Insira o 1º número</div>
+        <div><input id="campo1"/></div> 
+        <div>Insira o 2º número</div>
+        <div><input id="campo2"/></div>
+        <br/>
+        <div><button onclick="calcular()">Calcular Média</button></div>
+        </center>
+    </div>
+</body>
+</html>
