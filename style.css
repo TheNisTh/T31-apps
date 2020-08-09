@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 30px;
+}
+h1{
+    font-family: 'Chilanka', cursive;
+}
+a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a:hover{
+    text-decoration: line-through;
+    text-transform: uppercase;
+    text-decoration-color: lightcoral;
+}
+
+ul {
+    list-style-type: circle;
+}
