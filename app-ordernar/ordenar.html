@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordenar 3 números</title>
     <script>
-        function ordenar(){
+        function ordenar() {
             let n1 = parseFloat(document.getElementById("pos1").value)
             let n2 = parseFloat(document.getElementById("pos2").value)
             let n3 = parseFloat(document.getElementById("pos3").value)
             let msg = ""
-            if(n1==n2&&n1==n3&&n2==n3){
+            if (n1 == n2 && n1 == n3 && n2 == n3) {
                 msg = "Os números são iguais!"
-            }else if (n1>=n2&&n2>=n3){
-                msg = "A ordem dos números é: "+n3+" - "+n2+" - "+n1
-            }else if(n1>=n3&&n3>=n2){
-                msg = "A ordem dos números é: "+n2+" - "+n3+" - "+n1
-            }else if(n2>=n1&&n1>=n3){
-                msg = "A ordem dos números é: "+n3+" - "+n1+" - "+n2
-            }else if(n2>=n3&&n3>=n1){
-                msg = "A ordem dos números é: "+n1+" - "+n3+" - "+n2
-            }else if(n3>=n1&&n1>=n2){
-                msg = "A ordem dos números é: "+n3+" - "+n1+" - "+n2
-            }else if(n3>=n2&&n2>=n1){
-                msg = "A ordem dos números é: "+n1+" - "+n2+" - "+n3
+            } else if (n1 >= n2 && n2 >= n3) {
+                msg = "A ordem dos números é: " + n3 + " - " + n2 + " - " + n1
+            } else if (n1 >= n3 && n3 >= n2) {
+                msg = "A ordem dos números é: " + n2 + " - " + n3 + " - " + n1
+            } else if (n2 >= n1 && n1 >= n3) {
+                msg = "A ordem dos números é: " + n3 + " - " + n1 + " - " + n2
+            } else if (n2 >= n3 && n3 >= n1) {
+                msg = "A ordem dos números é: " + n1 + " - " + n3 + " - " + n2
+            } else if (n3 >= n1 && n1 >= n2) {
+                msg = "A ordem dos números é: " + n3 + " - " + n1 + " - " + n2
+            } else if (n3 >= n2 && n2 >= n1) {
+                msg = "A ordem dos números é: " + n1 + " - " + n2 + " - " + n3
             }
             document.getElementById("resultado").innerText = msg
         }
     </script>
 </head>
+
 <body>
     <div>
         <center>
             <h3>Ordenar 3 números</h3>
             <div>
-                <input id="pos1" placeholder ="Digite o 1º número" type="number"></input>
-                <input id="pos2" placeholder ="Digite o 2º número" type="number"></input>
-                <input id="pos3" placeholder ="Digite o 3º número" type="number"></input>
+                <input id="pos1" placeholder="Digite o 1º número" type="number"></input>
+                <input id="pos2" placeholder="Digite o 2º número" type="number"></input>
+                <input id="pos3" placeholder="Digite o 3º número" type="number"></input>
             </div>
-                <br/>
-                <div><button onclick="ordenar()">Ordenar</button></div>
+            <br />
+            <div><button onclick="ordenar()">Ordenar</button></div>
             <div id="resultado"></div>
         </center>
     </div>
 </body>
+
 </html>

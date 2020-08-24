@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,64 +9,66 @@
     <script>
         //PROB: Ordenar 2 numeros
 
-    //HTML    
+        //HTML    
         //0)TELA
-            //Três entradas e 1 botão
+        //Três entradas e 1 botão
 
-    //JS
-        function aoClicarOrdenar(){
-        //1) ENTRADA: ler os numeros
-        let dados = controle.lerDados()
+        //JS
+        function aoClicarOrdenar() {
+            //1) ENTRADA: ler os numeros
+            let dados = controle.lerDados()
 
 
-        //2) PROCESSAMENTO: ordenar
-        var msg = logicaNegocio.ordenarNumeros(dados.n1,dados.n2,dados.n3)
+            //2) PROCESSAMENTO: ordenar
+            var msg = logicaNegocio.ordenarNumeros(dados.n1, dados.n2, dados.n3)
 
-        //3) SAÍDA: imprimir
-        controle.imprimirSaida(msg)
+            //3) SAÍDA: imprimir
+            controle.imprimirSaida(msg)
         }
 
         var logicaNegocio = {
             msg="",
-            ordenarNumeros:function(n1,n2,n3){
-                if(n1==n2&&n1==n3&&n2==n3){
-                msg = "Os números são iguais!"
-            }else if (n1>=n2&&n2>=n3){
-                msg = "A ordem dos números é: "+n3+" - "+n2+" - "+n1
-            }else if(n1>=n3&&n3>=n2){
-                msg = "A ordem dos números é: "+n2+" - "+n3+" - "+n1
-            }else if(n2>=n1&&n1>=n3){
-                msg = "A ordem dos números é: "+n3+" - "+n1+" - "+n2
-            }else if(n2>=n3&&n3>=n1){
-                msg = "A ordem dos números é: "+n1+" - "+n3+" - "+n2
-            }else if(n3>=n1&&n1>=n2){
-                msg = "A ordem dos números é: "+n3+" - "+n1+" - "+n2
-            }else if(n3>=n2&&n2>=n1){
-                msg = "A ordem dos números é: "+n1+" - "+n2+" - "+n3
-            }
+            ordenarNumeros: function (n1, n2, n3) {
+                if (n1 == n2 && n1 == n3 && n2 == n3) {
+                    msg = "Os números são iguais!"
+                } else if (n1 >= n2 && n2 >= n3) {
+                    msg = "A ordem dos números é: " + n3 + " - " + n2 + " - " + n1
+                } else if (n1 >= n3 && n3 >= n2) {
+                    msg = "A ordem dos números é: " + n2 + " - " + n3 + " - " + n1
+                } else if (n2 >= n1 && n1 >= n3) {
+                    msg = "A ordem dos números é: " + n3 + " - " + n1 + " - " + n2
+                } else if (n2 >= n3 && n3 >= n1) {
+                    msg = "A ordem dos números é: " + n1 + " - " + n3 + " - " + n2
+                } else if (n3 >= n1 && n1 >= n2) {
+                    msg = "A ordem dos números é: " + n3 + " - " + n1 + " - " + n2
+                } else if (n3 >= n2 && n2 >= n1) {
+                    msg = "A ordem dos números é: " + n1 + " - " + n2 + " - " + n3
+                }
                 return this.msg
             }
         }
 
         var controle = {
-            lerDados:function(){
+            lerDados: function () {
                 var n1 = parseFloat(document.getElementById("n1").value)
                 var n2 = parseFloat(document.getElementById("n2").value)
                 var n3 = parseFloat(document.getElementById("n3").value)
-                return {n1,n2,n3}
+                return { n1, n2, n3 }
             }
             ,
-            imprimirSaida:function(msg){
+            imprimirSaida: function (msg) {
                 document.getElementById("resultado").innerText = msg
             }
         }
     </script>
 </head>
+
 <body>
-    <input id="n1" placeholder="Número 1" type="number"/>
-    <input id="n2" placeholder="Número 2" type="number"/>
-    <input id="n3" placeholder="Número 3" type="number"/>
-    <button onclick="aoClicarOrdenar()">Ordenar</button> 
-    <label id="resultado"></label>
+    <input id="n1" placeholder="Número 1" type="number" />
+    <input id="n2" placeholder="Número 2" type="number" />
+    <input id="n3" placeholder="Número 3" type="number" />
+    <button onclick="aoClicarOrdenar()">Ordenar</button>
+    <div id="resultado"></div>
 </body>
+
 </html>

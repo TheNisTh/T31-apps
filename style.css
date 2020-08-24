@@ -20,3 +20,6 @@ a:hover{
 ul {
     list-style-type: circle;
 }
+input,label{
+    display:block;
+}

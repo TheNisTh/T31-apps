@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,37 @@
     <script>
         //html
         //1 - criar a tela
-            let qtdAdulto = 0
-            let qtdMenores = 0
+        let qtdAdulto = 0
+        let qtdMenores = 0
 
-        function aoClicarAdicionar(){
-        //JS
-        //1 - lerDados
+        function aoClicarAdicionar() {
+            //JS
+            //1 - lerDados
             let idade = parseInt(document.getElementById("idade").value)
 
-        //2 - Classificar
+            //2 - Classificar
             let saida = ""
-            if(idade>=18){
+            if (idade >= 18) {
                 //2.1 acumular a quantidade de maiores de idade
-                qtdAdulto ++
-                
-            }else{
+                qtdAdulto++
+
+            } else {
                 //2.1 acumular a quantidade de menores de idade
-                qtdMenores ++
-            }   
+                qtdMenores++
+            }
             //2.2 atualizar a saida
             saida = `Adultos: ${qtdAdulto} Menores:${qtdMenores}`
-        //3 - Saida
+            //3 - Saida
             document.getElementById("resultado").innerText = saida
         }
     </script>
 </head>
+
 <body>
-    <input type="number" id="idade"/>
+    <h3>Classificar por idade</h3>
+    <input type="number" id="idade" placeholder="Qual a idade da pessoa" />
     <button onclick="aoClicarAdicionar()">Adicionar</button>
     <label id="resultado"></label>
 </body>
+
 </html>
