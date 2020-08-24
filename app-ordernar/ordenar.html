@@ -6,9 +6,9 @@
     <title>Ordenar 3 números</title>
     <script>
         function ordenar(){
-            let n1 = document.getElementById("pos1").value
-            let n2 = document.getElementById("pos2").value
-            let n3 = document.getElementById("pos3").value
+            let n1 = parseFloat(document.getElementById("pos1").value)
+            let n2 = parseFloat(document.getElementById("pos2").value)
+            let n3 = parseFloat(document.getElementById("pos3").value)
             let msg = ""
             if(n1==n2&&n1==n3&&n2==n3){
                 msg = "Os números são iguais!"
