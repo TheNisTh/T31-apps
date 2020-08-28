@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <title>Cadastro de Programador</title>
+    <script>
+        let qtHtml = 0
+        let qtCss = 0
+        let qtJs = 0
+        function selecionar() {
+            var in1 = document.getElementById("nome").value
+            var n1 = document.getElementById("ling").value
+
+            let msg = ""
+            if (n1 == "html") {
+                qtHtml++
+            } else if (n1 == "css") {
+                qtCss++
+            } else if (n1 == "js") {
+                qtJs++
+            }
+            msg = `HTML: ${qtHtml} CSS: ${qtCss} JS: ${qtJs}`
+            document.getElementById("resultado").innerText = msg
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" class="form-control" placeholder="Digite o seu nome" />
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="ling">
+                    <option value="">Selecione</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">Java Script</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="selecionar()">ADD</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+</body>
+
+</html>
