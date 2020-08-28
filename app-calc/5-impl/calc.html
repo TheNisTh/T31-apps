@@ -1,9 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <head>
-        <script>
-            class Calculadora{
-            somar(){
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        class Calculadora {
+            somar() {
                 //Leitura
                 //var n1 = document.querySelectorAll("input")[0].value
                 //var n2 = document.querySelectorAll("input")[1].value
@@ -14,42 +32,44 @@
                 //Saída
                 alert(soma)
             }
-            subtrair(){
+            subtrair() {
                 var n1 = num1.value
                 var n2 = num2.value
                 var sub = n1 - n2
                 alert(sub)
             }
-            multiplicar(){
+            multiplicar() {
                 var n1 = num1.value
                 var n2 = num2.value
                 var mult = n1 * n2
                 alert(mult)
             }
-            dividir(){
+            dividir() {
                 var n1 = num1.value
                 var n2 = num2.value
-                if(n2 != 0){
+                if (n2 != 0) {
                     var div = n1 / n2
                     alert(div)
-                }else{
+                } else {
                     alert("Digite um número diferente de zero!")
                 }
             }
         }
         var calc = new Calculadora()
-        </script>
-    </head>
-    <body>
-        <center>
+    </script>
+</head>
+
+<body>
+    <center>
         <h1>Calculadora Padrão</h1>
-        <input id="num1" type="number" placeholder="Número 1"/>
-        <input id="num2" type="number" placeholder="Número 2"/>
-        <br><br/>
+        <input id="num1" type="number" placeholder="Número 1" />
+        <input id="num2" type="number" placeholder="Número 2" />
+        <br><br />
         <button onclick="calc.somar()">Somar</button>
         <button onclick="calc.subtrair()">Subtrair</button>
         <button onclick="calc.multiplicar()">Multiplicar</button>
-        <button onclick="calc.dividir()">Dividir</button> 
-        </center>
-    </body>
+        <button onclick="calc.dividir()">Dividir</button>
+    </center>
+</body>
+
 </html>
