@@ -40,12 +40,13 @@
 
 <body>
     <div class="container">
-        <form>
-            <div class="form-group">
-                <label for="nome">Nome</label>
+        <h3>Cadastro de Programadores</h3>
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <label for="nome" class="sr-only">Nome</label>
                 <input id="nome" type="text" class="form-control" placeholder="Digite o seu nome" />
             </div>
-            <div class="form-group">
+            <div class="form-group mx-sm-3 mb-2">
                 <select class="form-control" id="ling">
                     <option value="">Selecione</option>
                     <option value="html">HTML</option>
@@ -53,7 +54,7 @@
                     <option value="js">Java Script</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-secondary" onclick="selecionar()">ADD</button>
+            <button type="button" class="btn btn-secondary mb-2" onclick="selecionar()">ADD</button>
         </form>
         <div id="resultado"></div>
     </div>
