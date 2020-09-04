@@ -1,0 +1,35 @@
+!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoas</title>
+
+    <script>
+        var pessoas = []
+        pessoas[0] = {
+            nome: "Pedro",
+            email: "pedro@fabricadeprogramador.com.br"
+        }
+        pessoas[1] = {
+            nome: "Zé",
+            email: "ze@fabricadeprogramador.com.br"
+        }
+        pessoas[2] = {
+            nome: "Maria",
+            email: "maria@fabricadeprogramador.com.br"
+        }
+        var msg = `${pessoas[0].nome} ${pessoas[0].email} </br> ${pessoas[1].nome} ${pessoas[1].email} </br> ${pessoas[2].nome} ${pessoas[2].email}`
+        function mostrar() {
+            document.getElementById("listaPessoas").innerHTML = msg
+        }
+    </script>
+</head>
+
+<body onload="mostrar()">
+    <div id="listaPessoas"></div>
+</body>
+
+</html>

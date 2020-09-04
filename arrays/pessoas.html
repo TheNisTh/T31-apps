@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoas</title>
+
+    <script>
+
+        var p1 = {
+            nome: "Pedro",
+            email: "pedro@fabricadeprogramador.com.br"
+        }
+        var p2 = {
+            nome: "Zé",
+            email: "ze@fabricadeprogramador.com.br"
+        }
+        var p3 = {
+            nome: "Maria",
+            email: "maria@fabricadeprogramador.com.br"
+        }
+        var msg = `${p1.nome} ${p1.email} </br> ${p2.nome} ${p2.email} </br> ${p3.nome} ${p3.email}`
+        function mostrar() {
+            document.getElementById("listaPessoas").innerHTML = msg
+        }
+    </script>
+</head>
+
+<body onload="mostrar()">
+    <div id="listaPessoas"></div>
+</body>
+
+</html>
