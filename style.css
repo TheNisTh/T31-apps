@@ -1,6 +1,15 @@
 *{
     box-sizing: border-box;
 }
+@keyframes prim{
+    0% {color: aliceblue ;}
+    25% {color: rgb(25, 25, 218);}
+    50% {color: brown;}
+    75% {color: aquamarine;}
+    100% {color: aliceblue;}
+}
+
+
 body{
     margin: 30px;
 }
@@ -23,4 +32,12 @@ ul {
 }
 input,label{
     display:block;
+}
+.prim{
+    animation-name: prim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.prime{
+    background-color: rgb(80, 63, 63);
 }
