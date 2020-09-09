@@ -37,7 +37,7 @@
         function listar() {
             saida = ""
             for (i = 0; i < arrCad.length; i++) {
-                saida = saida + `<div> ${arrCad[i].marca} ${arrCad[i].modelo} ${arrCad[i].ano} </div>`
+                saida = saida + `<div> ${arrCad[i].marca} - ${arrCad[i].modelo} - ${arrCad[i].ano} </div>`
             }
             document.getElementById("resultado").innerHTML = saida
         }
@@ -48,7 +48,7 @@
     </script>
 </head>
 
-<body>
+<body style="background-color: rgba(40, 87, 175, 0.432);">
     <div class="container">
         <div>
             <h3>Cadastro de Carros</h3>
