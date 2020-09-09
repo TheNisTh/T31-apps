@@ -18,18 +18,18 @@
         crossorigin="anonymous"></script>
     <title>Qual combustível utilizar</title>
     <script>
-        function calcular(){
+        function calcular() {
             let pG = parseFloat(document.getElementById("pos1").value)
             let pA = parseFloat(document.getElementById("pos3").value)
             let cG = parseFloat(document.getElementById("pos2").value)
             let cA = parseFloat(document.getElementById("pos4").value)
             let msg = ""
-            
-            if((cG / pG)>(cA / pA)){
+
+            if ((cG / pG) > (cA / pA)) {
                 msg = "Abasteça com Gasolina!"
-            }else if((cG / pG)<(cA / pA)){
+            } else if ((cG / pG) < (cA / pA)) {
                 msg = "Abasteça com Álcool!"
-            }else if((cG / pG)==(cA / pA)){
+            } else if ((cG / pG) == (cA / pA)) {
                 msg = "Abasteça com qualquer um"
             }
             document.getElementById("resultado").innerText = msg
@@ -38,26 +38,24 @@
 </head>
 
 <body>
-    <div>
-        <center>
-            <fieldset>
-                <legend>
-                    <h3>Qual combustível usar?</h3>
-                </legend>
-                <div><label for="pos1">Preço Gasolina</label>
-                    <input id="pos1" type="number" />
-                    <label for="pos2">Consumo Gasolina</label>
-                    <input id="pos2" type="number" /></div>
-                <div><label for="pos3">Preço Álcool</label>
-                    <input id="pos3" type="number" />
-                    <label for="pos4">Consumo Álcool</label>
-                    <input id="pos4" type="number" /></div>
-                </br></br>
-                <button onclick="calcular()">Calcular</button>
-                </br></br></br>
-                <div id="resultado"></div>
-            </fieldset>
-        </center>
+    <div class="container">
+        <div>
+            <h5>Álcool ou Gasolina</h5>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="pos1">Preço Gasolina</label>
+                <input class="form-control" id="pos1" type="number" />
+                <label for="pos2">Consumo Gasolina</label>
+                <input class="form-control" id="pos2" type="number" />
+                <label for="pos3">Preço Álcool</label>
+                <input class="form-control" id="pos3" type="number" />
+                <label for="pos4">Consumo Álcool</label>
+                <input class="form-control" id="pos4" type="number" />
+                <button class="btn btn-primary" type="button" onclick="calcular()">Calcular</button>
+            </div>
+        </form>
+        <div id="resultado"></div>
     </div>
 </body>
 

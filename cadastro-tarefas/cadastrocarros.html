@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Carros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        //array para guardar a tarefa
+        var arrCad = []
+        function cadastrar() {
+            //ler os dados da tela
+            let marca = document.getElementById("in1").value
+            let ano = document.getElementById("in2").value
+            let modelo = document.getElementById("in3").value
+            //criar objeto tarefa
+            let t = { marca: marca, ano: ano, modelo: modelo }
+            //limpar o campo
+            document.getElementById("in1").value = ""
+            document.getElementById("in2").value = ""
+            document.getElementById("in3").value = ""
+            //colocar no array    
+            arrCad.push(t)
+        }
+        function listar() {
+            saida = ""
+            for (i = 0; i < arrCad.length; i++) {
+                saida = saida + `<div> ${arrCad[i].marca} ${arrCad[i].modelo} ${arrCad[i].ano} </div>`
+            }
+            document.getElementById("resultado").innerHTML = saida
+        }
+        function limpar() {
+            arrCad = []
+            document.getElementById("resultado").innerHTML = ""
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h3>Cadastro de Carros</h3>
+        </div>
+        <form class="form-inline">
+            <div class="form-group">
+                <input id="in1" placeholder="Digite a marca" type="text" class="form-control" />
+                <input id="in2" placeholder="Digite o ano" type="number" class="form-control" />
+                <input id="in3" placeholder="Digite o modelo" type="text" class="form-control" />
+                <button class="btn btn-primary" type="button" onclick="cadastrar()">Cadastrar</button>
+                <button class="btn btn-primary" type="button" onclick="listar()">Listar</button>
+                <button class="btn btn-primary" type="button" onclick="limpar()">Limpar</button>
+            </div>
+        </form>
+        <div id="resultado"></div>
+    </div>
+</body>
+
+</html>
