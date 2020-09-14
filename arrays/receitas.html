@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <title>Receitas e Despesas</title>
+    <script>
+        var arrRec = []
+        var arrDesp = []
+        function cadastrar() {
+            let data = document.getElementById("pos1").value
+            let desc = document.getElementById("pos2").value
+            let valor = parseFloat(document.getElementById("pos3").value)
+            let t = { data: data, desc: desc, valor: valor }
+            let menu = document.getElementById("opt").value
+            if (menu == "select") {
+                alert("Escolha uma opção")
+            } else if (menu == "receita") {
+                arrRec.push(t)
+            } else if (menu == "despesa") {
+                arrDesp.push(t)
+            } else {
+                alert("Escolha uma opção!!")
+            }
+
+            document.getElementById("pos1").value = ""
+            document.getElementById("pos2").value = ""
+            document.getElementById("pos3").value = ""
+            document.getElementById("opt").value = "select"
+        }
+        function listar() {
+            let somaRec = 0
+            let somaDesp = 0
+            let saldo = 0
+            let saidaRec = ""
+            let saidaDesp = ""
+            for (i = 0; i < arrRec.length; i++) {
+                saidaRec = saidaRec + `<div>${arrRec[i].data} - ${arrRec[i].desc} - ${arrRec[i].valor}</div>`
+                somaRec = somaRec + arrRec[i].valor
+            }
+            let saidaSomaRec = `Receita Total: ${somaRec}`
+            for (i = 0; i < arrDesp.length; i++) {
+                saidaDesp = saidaDesp + `<div>${arrDesp[i].data} - ${arrDesp[i].desc} - ${arrDesp[i].valor}</div>`
+                somaDesp = somaDesp + arrDesp[i].valor
+            }
+            let saidaSomaDesp = `Despesa Total: ${somaDesp}`
+            saldo = `Saldo: ${somaRec - somaDesp}`
+            document.getElementById("resultRec").innerHTML = saidaRec
+            document.getElementById("resultSomaRec").innerHTML = saidaSomaRec
+            document.getElementById("resultDesp").innerHTML = saidaDesp
+            document.getElementById("resultSomaDesp").innerHTML = saidaSomaDesp
+            document.getElementById("saldo").innerHTML = saldo
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Receitas e Despesas</h3>
+        <form class="form-inline">
+            <div class="input-group">
+                <input id="pos1" type="date" />
+                <input id="pos2" type="text" placeholder="Descrição" />
+                <input id="pos3" type="number" placeholder="Valor" />
+                <div class="form-group">
+                    <select class="form-control" id="opt">
+                        <option value="select">Selecione</option>
+                        <option value="receita">Receitas</option>
+                        <option value="despesa">Despesas</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="cadastrar()" type="button">Cadastrar</button>
+            <button onclick="listar()" type="button">Listar</button>
+
+        </form>
+        <div class="form-group">
+            <div id="resultRec"></div>
+            <div id="resultSomaRec"></div></br>
+            <div id="resultDesp"></div>
+            <div id="resultSomaDesp"></div></br>
+            <div id="saldo"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [
+            { nome: "jão", idade: 17 },
+            { nome: "maria", idade: 15 },
+            { nome: "zé", idade: 27 }
+        ]
+        function imprimirMaior() {
+            let saida = ""
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i].idade >= 18) {
+                    saida = saida + "<div>" + arr[i].nome + " " + arr[i].idade + "</div>"
+                }
+            }
+            imprimirSaida(saida)
+        }
+        function imprimirMenor() {
+            let saida = ""
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i].idade < 18) {
+                    saida = saida + "<div>" + arr[i].nome + " " + arr[i].idade + "</div>"
+                }
+            }
+            imprimirSaida(saida)
+        }
+        function imprimirMedia() {
+            let soma = 0
+
+            for (i = 0; i < arr.length; i++) {
+                soma = soma + arr[i].idade
+            }
+            let media = soma / arr.length
+            imprimirSaida(media)
+        }
+
+        function cad() {
+            let nome = document.getElementById("pos1").value
+            let idade = parseInt(document.getElementById("pos2").value)
+            let t = { nome: nome, idade: idade }
+            arr.push(t)
+        }
+        function imprimirSaida(s) {
+            document.getElementById("saida").innerHTML = s
+        }
+    </script>
+</head>
+
+<body style="background-color: rgba(40, 87, 175, 0.432);">
+    <div class="container">
+        <div>
+            <h3>Cadastro de pessoas</h3>
+        </div>
+        <form class="form-inline">
+            <div class="form-group">
+                <input id="pos1" placeholder="Digite o nome:" type="text" class="form-control" />
+                <input id="pos2" placeholder="Digite a idade:" type="number" class="form-control" />
+
+                <button class="btn btn-primary" type="button" onclick="cad()">Cadastrar</button>
+                <button class="btn btn-secondary" type="button" onclick="imprimirMaior()">Maior</button>
+                <button class="btn btn-secondary" type="button" onclick="imprimirMenor()">Menor</button>
+                <button class="btn btn-secondary" type="button" onclick="imprimirMedia()">Média</button>
+            </div>
+        </form>
+        <div id="saida"></div>
+    </div>
+</body>
+
+</html>
